@@ -15,12 +15,11 @@ $myMet	 	=   $myObj->getMethod();
 
 defined('_JEXEC') or die('Restricted access');
 
-
 class RecentArticles {
 	
 	public 	$id;											// item(s) ID	
 	public 	$date_now;										// date now
-	public 	$userIP;										// user IP 
+	public 	$userIP;										// user IP
 	
 	
 	public function __construct($id) {		
@@ -33,28 +32,6 @@ class RecentArticles {
 		$app 	= 	JFactory::getApplication();
 		return	$app;
 	}	
-	
-	public function getId(){
-		
-		if($this->id ) {
-			$id		=	$this->id;	
-		} else {					
-			$app 	= 	$this->getApp();
-			$app->enqueueMessage('No article ID for Recently Articles!','warning');	
-		}		
-		return $id;		
-	}
-	
-	public function getIP(){
-		
-		if($this->userIP ) {
-			$userIP	=	$this->userIP;	
-		} else {					
-			$app 	= 	$this->getApp();
-			$app->enqueueMessage('No User IP for Recently Articles!','warning');	
-		}		
-		return $userIP;		
-	}
 	
 	public function setRecent(){
 		
